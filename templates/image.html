@@ -5,7 +5,6 @@
 	</head>
 	<body>
 		<video id = "video" width = "640" height = "480" autoplay></video>
-		<img src="">
 		<canvas id = "canvas" width = "640" height = "480"></canvas>
 
 		<script>
@@ -20,7 +19,6 @@
 		  	function snapshot() {
 		    	if (localMediaStream) {
 		      		ctx.drawImage(video,0,0,640,480);
-		      		document.querySelector('img').src = canvas.toDataURL('image/png');
 					imgData = canvas.toDataURL('image/png');
 					var img = JSON.stringify({ "strings": imgData});
 					$.post("capture", img, function( data ) {
