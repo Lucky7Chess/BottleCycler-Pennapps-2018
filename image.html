@@ -3,56 +3,35 @@
 		<title>Cam Rec</title>
 	</head>
 	<body>
-		<!-- <video autoplay></video>
-			<script>
-			  var errorCallback = function(e) {
-			    console.log('oof', e);
-			  };
+		<video id = "video" width = "640" height = "480" autoplay></video>
+		<img src="">
+		<canvas id = "canvas" width = "640" height = "480"></canvas>
 
-			  // Not showing vendor prefixes.
-			  navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) {
-			    var video = document.querySelector('video');
-			    video.src = window.URL.createObjectURL(localMediaStream);
+		<script>
+			var errorCallback = function(e) {
+				console.log('oof', e);
+		  	};
+		  	var video = document.getElementById('video');
+		  	var canvas = document.getElementById('canvas');
+		  	var ctx = canvas.getContext('2d');
+		  	var localMediaStream = null;
+			var imgData;
 
-			    // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
-			    // See crbug.com/110938.
-			    video.onloadedmetadata = function(e) {
-			      // Ready to go. Do some stuff.
-			    };
-			  }, errorCallback);
-			</script> -->
-			<video id = "video" width = "640" height = "480" autoplay></video>
-			<img src="">
-			<canvas id = "canvas" width = "640" height = "480"></canvas>
+		  	function snapshot() {
+		    	if (localMediaStream) {
+		      		ctx.drawImage(video,0,0,640,480);
+		      		document.querySelector('img').src = canvas.toDataURL('image/webp');
+					imgData = canvas.toDataURL('image/webp');
 
-			<script>
-				var errorCallback = function(e) {
-					console.log('oof', e);
-			  	};
-			  	var video = document.getElementById('video');
-			  	var canvas = document.getElementById('canvas');
-			  	var ctx = canvas.getContext('2d');
-			  	var localMediaStream = null;
-				var imgData;
+		    	}
+		  	}
 
-			  	function snapshot() {
-			    	if (localMediaStream) {
-			      		ctx.drawImage(video,0,0,640,480);
-			      		// "image/webp" works in Chrome.
-			      		// Other browsers will fall back to image/png.
-			      		document.querySelector('img').src = canvas.toDataURL('image/webp');
-						imgData = canvas.toDataURL('image/webp');
-						
-			    	}
-			  	}
+		  	video.addEventListener('click', snapshot, false);
 
-			  	video.addEventListener('click', snapshot, false);
-
-			  	// Not showing vendor prefixes or code that works cross-browser.
-			  	navigator.getUserMedia({video: true}, function(stream) {
-			    	video.srcObject = stream;
-			    	localMediaStream = stream;
-			  	}, errorCallback);
-			</script>
+		  	navigator.getUserMedia({video: true}, function(stream) {
+		    	video.srcObject = stream;
+		    	localMediaStream = stream;
+		  	}, errorCallback);
+		</script>
 	</body>
 </html>
