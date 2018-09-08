@@ -33,6 +33,7 @@
 			  	var canvas = document.getElementById('canvas');
 			  	var ctx = canvas.getContext('2d');
 			  	var localMediaStream = null;
+				var imgData;
 
 			  	function snapshot() {
 			    	if (localMediaStream) {
@@ -40,6 +41,8 @@
 			      		// "image/webp" works in Chrome.
 			      		// Other browsers will fall back to image/png.
 			      		document.querySelector('img').src = canvas.toDataURL('image/webp');
+						imgData = canvas.toDataURL('image/webp');
+						
 			    	}
 			  	}
 
