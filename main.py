@@ -10,9 +10,8 @@ def index():
 def capture():
 	if request.method == "POST":
 		img = request.get_json(force = True)
-
 		print(img)
-		return "jvhcxkvj"
+		return "hkwehr"
 
 if __name__ == '__main__':
     app.run()
