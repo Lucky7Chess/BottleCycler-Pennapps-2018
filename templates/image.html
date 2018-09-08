@@ -17,21 +17,18 @@
 		  	var ctx = canvas.getContext('2d');
 		  	var localMediaStream = null;
 			var imgData;
-
 		  	function snapshot() {
 		    	if (localMediaStream) {
 		      		ctx.drawImage(video,0,0,640,480);
 		      		document.querySelector('img').src = canvas.toDataURL('image/png');
 					imgData = canvas.toDataURL('image/png');
-					var img = JSON.stringify(imgData);
+					var img = JSON.stringify({ "strings": imgData});
 					$.post("capture", img, function( data ) {
 						console.log("img: " + data);
 					});
 		    	}
 		  	}
-
 		  	video.addEventListener('click', snapshot, false);
-
 		  	navigator.getUserMedia({video: true}, function(stream) {
 		    	video.srcObject = stream;
 		    	localMediaStream = stream;

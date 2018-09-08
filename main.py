@@ -11,13 +11,17 @@ def index():
 @app.route('/capture', methods = ["POST"])
 def capture():
 	if request.method == "POST":
-		img = request.get_json(force = True) #get the img
-		#img = img[23:]
+		img = request.get_json(force = True)["strings"] #get the img
+		print(img)
+		img = img[22:]
 		casted = b'{img}'
+		#img += '=' * (-len(img) % 4) 
 		#encoded = base64.b64encode(str(img))
+
 		with open("bottle.png", "wb") as fh:
-			fh.write(casted)
-		process = Popen(['python', 'classify_image.py'], stdout=PIPE, stderr=PIPE) #classify the image
+			print(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
+			fh.write(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
+		process = Popen(['python', 'classify_image.py'], stdout=PIPE, stderr=PIPE)
 		stdout, stderr = process.communicate() #get classifier results
 		return str(str(stderr).find('bottle'))
 
