@@ -21,8 +21,8 @@
 		  	function snapshot() {
 		    	if (localMediaStream) {
 		      		ctx.drawImage(video,0,0,640,480);
-		      		document.querySelector('img').src = canvas.toDataURL('image/webp');
-					imgData = canvas.toDataURL('image/webp');
+		      		document.querySelector('img').src = canvas.toDataURL('image/png');
+					imgData = canvas.toDataURL('image/png');
 					var img = JSON.stringify(imgData);
 					$.post("capture", img, function( data ) {
 						console.log("img: " + data);
