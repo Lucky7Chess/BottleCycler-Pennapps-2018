@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Cam Rec</title>
+		<script	src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<video id = "video" width = "640" height = "480" autoplay></video>
@@ -22,7 +23,10 @@
 		      		ctx.drawImage(video,0,0,640,480);
 		      		document.querySelector('img').src = canvas.toDataURL('image/webp');
 					imgData = canvas.toDataURL('image/webp');
-
+					var img = JSON.stringify(imgData);
+					$.post("capture", img, function( data ) {
+						console.log("img: " + data);
+					});
 		    	}
 		  	}
 
