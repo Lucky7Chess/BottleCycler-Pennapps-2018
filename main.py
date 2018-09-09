@@ -2,15 +2,33 @@ from flask import Flask, render_template, request, Response, redirect
 from subprocess import Popen, PIPE
 import base64
 import serial
+import os
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+	# tmpl = env.get_template('index.html')
+    # sidebar = env.get_template('sidebar.html')
+    # js_url = url_for('static', filename='image.js')
+    # return tmpl.render(root_url="",sidebar=sidebar.render(), jsurl=js_url)
     return render_template("home.html")
 
 @app.route('/pic')
 def pic():
     return render_template("image.html")
+
+# @app.context_processor
+# def override_url_for():
+#     return dict(url_for=dated_url_for)
+#
+# def dated_url_for(endpoint, **values):
+#     if endpoint == 'static':
+#         filename = values.get('filename', None)
+#         if filename:
+#             file_path = os.path.join(app.root_path,
+#                                      endpoint, filename)
+#             values['q'] = int(os.stat(file_path).st_mtime)
+#     return url_for(endpoint, **values)
 
 @app.route('/capture', methods = ["POST"])
 def capture():
