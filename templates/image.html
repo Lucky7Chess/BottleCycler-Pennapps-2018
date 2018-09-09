@@ -20,10 +20,8 @@
 					</div>
 					<!-- <canvas width = "480" height = "360"></canvas> -->
 				</div>
-				<div style = "padding: 50px; font-size: 25px" class="col-sm">
-
-
-
+				<div id ="results-string" style = "font-family: 'Times New Roman'; padding: 50px; font-size: 35px" class="col-sm">
+					Present a recycleable can or bottle.
 				</div>
 			</div>
 		<script>
@@ -42,6 +40,11 @@
 					var img = JSON.stringify({ "strings": imgData});
 					$.post("capture", img, function( data ) {
 						console.log("img: " + data);
+						if (data == -1){
+							document.getElementById("results-string").innerHTML = "Not Verifyable, Please Try Again.";
+						} else {
+							document.getElementById("results-string").innerHTML = "Can Recognized. Dispensing Refund.";
+						}
 					});
 		    	}
 		  	}
