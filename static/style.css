@@ -1,0 +1,8 @@
+body {
+  	background-image: url("background.svg");
+  	background-size: cover;
+}
+
+.buttons {
+	max-width: 250px;
+}

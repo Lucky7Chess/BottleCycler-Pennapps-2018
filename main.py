@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("image.html")
+    return render_template("home.html")
 
 @app.route('/capture', methods = ["POST"])
 def capture():
