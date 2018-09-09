@@ -28,7 +28,7 @@ BottleCycler:  Automate $0.05 bottle recycle refunds though image processing
 * Processing flask backend into the image classifier that was adapted.
 * Creating new connectors for the pair of servos
 ## Accomplishments that we're proud of
-* With very little tools, we could
+* With very little tools, we could build with hardware a container for bottles and coins, a web app, and artificial intelligence all within a weekend.
 ## What we learned
 * We learned about Arduino/hardware hacking.
 * We learned about the pros/cons of Flask vs. using something like Node.js
