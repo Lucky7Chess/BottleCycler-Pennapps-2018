@@ -9,9 +9,9 @@
 	<body>
 			<div class="row">
 	  			<div class="col-md" style="text-align: center;">
-					<video style = "padding: 25px;"id = "video" width = "320" height = "240" autoplay></video>
-					<button style = "width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary">Secondary</button>
-					<canvas style = "padding: 25px;" id = "canvas" width = "320" height = "240"></canvas>
+					<video style = "padding: 25px;"id = "video" width = "480" height = "270" autoplay></video>
+					<button id = "verifybutton" style = "width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary" onclick="snapshot()">Verify Bottle</button>
+					<canvas id = "canvas" width = "480" height = "270" style:"width: 480; height: 360"></canvas>
 				</div>
 				<div style = "padding: 50px; font-size: 25px" class="col-sm">
 
@@ -38,7 +38,6 @@
 					});
 		    	}
 		  	}
-		  	video.addEventListener('click', snapshot, false);
 		  	navigator.getUserMedia({video: true}, function(stream) {
 		    	video.srcObject = stream;
 		    	localMediaStream = stream;
