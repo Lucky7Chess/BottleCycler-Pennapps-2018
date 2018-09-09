@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1440 790" style="enable-background:new 0 0 1440 790;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFF6CA;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#999999;}
+	.st2{font-family:'Bebas';}
+	.st3{font-size:41px;}
+	.st4{fill:none;stroke:#B3B3B3;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#B3B3B3;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:12.1159,10.0965;}
+	.st6{font-family:'RoundedMplus1c-Light';}
+	.st7{font-size:20px;}
+	.st8{font-size:24px;}
+	.st9{fill:none;stroke:#CCCCCC;stroke-linecap:round;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#CCCCCC;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:12.251,10.2092;}
+</style>
+<g id="Layer_1">
+	<rect class="st0" width="1440" height="790"/>
+</g>
+<g id="Layer_2">
+	<text transform="matrix(1 0 0 1 607.2401 94.6483)" class="st1 st2 st3">earth   cents</text>
+	<g>
+		<g>
+			<line class="st4" x1="720" y1="141.7" x2="720" y2="147.7"/>
+			<line class="st5" x1="720" y1="157.8" x2="720" y2="730.3"/>
+			<line class="st4" x1="720" y1="735.4" x2="720" y2="741.4"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 815.301 185.323)"><tspan x="0" y="0" class="st1 st6 st7">1) Bring your recycled cans and bottles to a recycling </tspan><tspan x="0" y="24" class="st1 st6 st7">     location.</tspan><tspan x="0" y="96" class="st1 st6 st7">2) Scan the item.</tspan><tspan x="0" y="168" class="st1 st6 st7">3) Obtain a coin as your reward!</tspan></text>
+	<text transform="matrix(1 0 0 1 816.0203 471.9405)" class="st1 st2 st8">status:</text>
+	<g>
+		<g>
+			<line class="st9" x1="625.4" y1="419.1" x2="619.4" y2="419.1"/>
+			<line class="st10" x1="609.2" y1="419.1" x2="97.8" y2="419.1"/>
+			<line class="st9" x1="92.6" y1="419.1" x2="86.6" y2="419.1"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 92.229 471.9405)" class="st1 st2 st8">Your image</text>
+</g>
+</svg>
