@@ -9,15 +9,16 @@
 	<body>
 			<div class="row">
 	  			<div class="col-md" style="text-align: center;">
-<<<<<<< HEAD
-					<video style = "margin: 25px;"id = "video" width = "480" height = "370" autoplay></video>
-					<button id = "verifybutton" style = "width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary" onclick="snapshot()">Verify Bottle</button>
-					<canvas style = "margin-left: 125px; display: block; padding: 0px" transform: translate(-50%, -50%)" id = "canvas" width = "480" height = "370" ></canvas>
-=======
-					<video style = "padding: 25px;" id = "video" width = "480" height = "270" autoplay></video>
-					<button id = "verifybutton" style = "width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary" onclick="snapshot()">Verify Bottle</button>
-					<canvas style = "padding: 25px;" id = "canvas" width = "480" height = "270" style = "width: 480; height: 270"></canvas>
->>>>>>> 73328a4a92d158cf5e3ad8b305f2faa7cac40bbf
+					<div class="row">
+						<video style = "margin: auto; margin-top: 75px"id = "video" width = "324" height = "243" autoplay></video>
+					</div>
+					<div class="row">
+						<button id = "verifybutton" style = "margin: auto; margin-top: 25px; width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary" onclick="snapshot()">Verify Bottle</button>
+					</div>
+					<div class="row">
+						<canvas style = "padding: 0px; margin: auto; margin-top: 100px; display: block;" id = "canvas" width = "324" height = "243" ></canvas>
+					</div>
+					<!-- <canvas width = "480" height = "360"></canvas> -->
 				</div>
 				<div style = "padding: 50px; font-size: 25px" class="col-sm">
 
@@ -36,7 +37,7 @@
 			var imgData;
 		  	function snapshot() {
 		    	if (localMediaStream) {
-		      		ctx.drawImage(video,0,0,320,240);
+		      		ctx.drawImage(video,0,0,324,243);
 					imgData = canvas.toDataURL('image/png');
 					var img = JSON.stringify({ "strings": imgData});
 					$.post("capture", img, function( data ) {
