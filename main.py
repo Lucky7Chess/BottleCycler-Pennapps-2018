@@ -7,6 +7,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("home.html")
+@app.route('/login')
+def login():
+    return render_template("image.html")
 
 @app.route('/capture', methods = ["POST"])
 def capture():
@@ -15,7 +18,7 @@ def capture():
 		print(img)
 		img = img[22:]
 		casted = b'{img}'
-		#img += '=' * (-len(img) % 4) 
+		#img += '=' * (-len(img) % 4)
 		#encoded = base64.b64encode(str(img))
 
 		with open("bottle.png", "wb") as fh:
