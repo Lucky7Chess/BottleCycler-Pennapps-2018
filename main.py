@@ -33,5 +33,5 @@ def capture():
 			return 1
 
 if __name__ == '__main__':
-    a =serial.Serial("/dev/ttyACM0")
+    a =serial.Serial("/dev/tty.usbmodem1411")
     app.run()
