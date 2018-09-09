@@ -38,18 +38,18 @@ def capture():
 		img = img[22:]
 		casted = b'{img}'
 		with open("bottle.png", "wb") as fh:
-			print(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
+			# print(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
 			fh.write(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
 		process = Popen(['python', 'classify_image.py'], stdout=PIPE, stderr=PIPE)
 		stdout, stderr = process.communicate() #get classifier results
 		bottle = str(str(stderr).find('bottle'))
 		can = str(str(stderr).find('can'))
-		if bottle == "-1" and can == "-1" :
-			return -1
+		if bottle == "-1" and can == "-1":
+			return str(-1)
 		else:
 			a.write(b'1')
-			return 1
+			return str(1)
 
 if __name__ == '__main__':
-    a =serial.Serial("/dev/tty.usbmodem1411")
+    a =serial.Serial("/dev/tty.usbmodem1421")
     app.run()
