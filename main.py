@@ -27,7 +27,12 @@ def capture():
 			fh.write(base64.b64decode(base64.b64decode(base64.b64encode(img.encode()))))
 		process = Popen(['python', 'classify_image.py'], stdout=PIPE, stderr=PIPE)
 		stdout, stderr = process.communicate() #get classifier results
-		return str(str(stderr).find('bottle'))
+		bottle = str(str(stderr).find('bottle'))
+		if bottle == "-1":
+			can = str(str(stderr).find('bottle'))
+			return can
+		else:
+			return bottle
 
 if __name__ == '__main__':
     app.run()
