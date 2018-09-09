@@ -2,11 +2,22 @@
 	<head>
 		<title>Cam Rec</title>
 		<script	src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	</head>
 	<body>
-		<video id = "video" width = "640" height = "480" autoplay></video>
-		<canvas id = "canvas" width = "640" height = "480"></canvas>
-
+			<div class="row">
+	  			<div class="col-md" style="text-align: center;">
+					<video style = "padding: 25px;"id = "video" width = "640" height = "480" autoplay></video>
+					<button style = "width: 250px; height 150px; font-size: 25px" type="button" class="btn btn-secondary">Secondary</button>
+					<canvas id = "canvas" width = "640" height = "480"></canvas>
+				</div>
+				<div style = "padding: 50px; font-size: 25px" class="col-sm">
+					<div>1. Bring your recycled cans to a recycling location.<br>
+					2. Scan the item.<br>
+					3. Obtain a coin as your reward.<br>
+				</div>
+			</div>
 		<script>
 			var errorCallback = function(e) {
 				console.log('oof', e);
